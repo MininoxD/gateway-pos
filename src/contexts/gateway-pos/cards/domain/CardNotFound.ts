@@ -1,5 +1,6 @@
-export class CardNotFound extends Error {
+import { HttpException } from '@nestjs/common'
+export class CardNotFound extends HttpException {
   constructor() {
-    super('CardNotFound')
+    super('CardNotFound', 404)
   }
 }

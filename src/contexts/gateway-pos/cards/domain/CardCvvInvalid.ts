@@ -1,5 +1,6 @@
-export class CardCvvInvalid extends Error {
+import { HttpException } from '@nestjs/common'
+export class CardCvvInvalid extends HttpException {
   constructor() {
-    super('Card cvv is invalid')
+    super('Card cvv is invalid', 400)
   }
 }

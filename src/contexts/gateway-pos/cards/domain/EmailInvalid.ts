@@ -1,5 +1,6 @@
-export class EmailInvalid extends Error {
+import { HttpException } from '@nestjs/common'
+export class EmailInvalid extends HttpException {
   constructor() {
-    super('Email is invalid')
+    super('Email is invalid', 400)
   }
 }
