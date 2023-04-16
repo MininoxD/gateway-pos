@@ -1,0 +1,27 @@
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id                           String   @id @map("_id") @db.ObjectId
+  cellPhoneNumber              String   @unique
+  cellPhoneNumberIsVerified    Boolean  
+}
+
+model UserCredentials {
+  idUser          String  @id  @map("_id") @db.ObjectId
+  token           String   
+  tokenCreatedAt  DateTime
+}
+
+model CardData {
+  id                          String   @id @map("_id")
+  data                        String
+  expirationDate              DateTime
+  token                       String
+}

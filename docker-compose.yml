@@ -1,0 +1,24 @@
+version: '3.8'
+
+x-app-service: &default-app
+  build: .
+  command: ''
+  volumes:
+    - .:/code:delegated
+    - node_modules:/code/node_modules:delegated
+services:
+  mongo:
+    image: bitnami/mongodb:latest
+    environment:
+      - MONGODB_ADVERTISED_HOSTNAME=127.0.0.1
+      - MONGODB_REPLICA_SET_MODE=primary
+      - MONGODB_ROOT_USER=pos
+      - MONGODB_ROOT_PASSWORD=pos123
+      - MONGODB_REPLICA_SET_KEY=replicasetkey123
+    ports:
+      - 27017:27017
+    volumes:
+      - mongo-db:/bitnami/mongodb
+volumes:
+  node_modules:
+  mongo-db:

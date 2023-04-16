@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rest-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rest-api
+  template:
+    metadata:
+      labels:
+        app: rest-api
+    spec:
+      containers:
+        - name: rest-api
+          imagePullPolicy: IfNotPresent
+          image: app-rest
+          ports:
+            - containerPort: 5000
+          env:
+            - name: DATABASE_URL
+              value: mongodb://root:root123@gateway-pos-app-mongodb-headless:27017/posDatabase?authSource=admin
