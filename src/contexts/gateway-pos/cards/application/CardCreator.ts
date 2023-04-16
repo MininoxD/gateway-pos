@@ -17,7 +17,6 @@ export class CardCreator {
 
     const expirationDate = new Date()
     expirationDate.setMinutes(expirationDate.getMinutes() + 1)
-    console.log('expirationDate', expirationDate)
     const cardTimeExpiration = CardTimeExpiration.create(expirationDate)
     const cardNumber = new CardNumber(data.cardNumber)
     const cardCvv = new CardCvv(data.cardCvv)

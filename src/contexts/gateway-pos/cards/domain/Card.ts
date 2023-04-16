@@ -87,8 +87,6 @@ export class Card {
 
   expired(): boolean {
     const now = new Date()
-    console.log('now', now)
-    console.log('this.cardTimeExpiration.value', this.cardTimeExpiration.value)
     return this.cardTimeExpiration.value < now
   }
 }

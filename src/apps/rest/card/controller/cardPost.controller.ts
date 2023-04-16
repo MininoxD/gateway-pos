@@ -6,7 +6,6 @@ import {
   BadRequestException
 } from '@nestjs/common'
 import { CardCreator } from '../../../../contexts/gateway-pos/cards/application/CardCreator'
-import { CardCreatorParameters } from '../../../../contexts/gateway-pos/cards/application/CardCreatorParameters'
 import { JwtService } from '@nestjs/jwt'
 import { ZodValidationPipe } from '../../validator/zodValidationPipe'
 import { CardCreatorParametersSchema } from '../schema/cardCreatorParametersSchema'

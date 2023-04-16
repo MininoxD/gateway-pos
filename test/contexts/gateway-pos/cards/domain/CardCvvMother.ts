@@ -7,6 +7,13 @@ export class CardCvvMother {
   }
 
   static random(): CardCvv {
-    return this.create(Number(MotherCreator.random().finance.creditCardCVV()))
+    return this.create(
+      Number(
+        MotherCreator.random().datatype.number({
+          min: 100,
+          max: 9999
+        })
+      )
+    )
   }
 }

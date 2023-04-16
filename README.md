@@ -22,11 +22,9 @@ $ npm install
 $ docker-compose up --build
 # Config .env
 # example: DATABASE_URL=mongodb://pos:pos123@localhost:27017/posDatabase?authSource=admin
-```
 
-### Running the app local Selct Mode
+## Running the app local Select Mode
 
-```bash
 # development
 $ npm run start
 
@@ -35,7 +33,12 @@ $ npm run start:dev
 
 # production mode
 $ npm run start:prod
+
 ```
+
+
+
+
 
 ## Running the app local - Helm - Kubernetes
 
